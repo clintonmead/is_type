@@ -1,0 +1,8 @@
+[package]
+name = "is_type"
+version = "0.1.0"
+authors = ["Clinton Mead <clintonmead@gmail.com>"]
+edition = "2018"
+description = "Equality constraints for types"
+license = "MIT/Apache-2.0"
+repository = "https://github.com/clintonmead/is_type"
