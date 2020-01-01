@@ -13,20 +13,19 @@
 //! 
 //! [this comment on equality constraints in where clauses]: 
 //! https://github.com/rust-lang/rust/issues/20041#issuecomment-414551783
-//! 
-//! Note that whilst I'd like the trait `Is` to have the where condition:
-//! `where Self : From<Self::Type>`
-//! the Rust compiler doesn't like the self referential nature of this.
-
+//!
+//! Note that `into_val` and `from_val` are basically `into` and `from`,
+//! but for this trait to work universally we need a universal instance, 
+//! which one can't define on `Into` or `From`.
 pub trait Is 
 {
     type Type;
 
-    fn into(self) -> Self::Type;
+    fn into_val(self) -> Self::Type;
     fn into_ref(&self) -> &Self::Type;
     fn into_mut_ref(&mut self) -> &mut Self::Type;
 
-    fn from(x : Self::Type) -> Self;
+    fn from_val(x : Self::Type) -> Self;
     fn from_ref(x : &Self::Type) -> &Self;
     fn from_mut_ref(x : &mut Self::Type) -> &mut Self;
 }
@@ -34,7 +33,7 @@ pub trait Is
 impl<T> Is for T {
     type Type = T;
 
-    fn into(self) -> Self::Type {
+    fn into_val(self) -> Self::Type {
         self
     }
 
@@ -46,7 +45,7 @@ impl<T> Is for T {
         self
     }
 
-    fn from(x : Self::Type) -> Self {
+    fn from_val(x : Self::Type) -> Self {
         x
     }
 

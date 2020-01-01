@@ -1,6 +1,6 @@
 [package]
 name = "is_type"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Clinton Mead <clintonmead@gmail.com>"]
 edition = "2018"
 description = "Equality constraints for types"
