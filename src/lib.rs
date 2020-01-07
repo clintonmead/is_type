@@ -1,3 +1,4 @@
+#![no_std]
 //! # Equality constraints for types
 //!
 //! `is_type` gives the trait `Is<X>` which acts like an equality constraint.
