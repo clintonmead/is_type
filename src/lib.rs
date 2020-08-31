@@ -1,11 +1,11 @@
 //! # Equality constraints for types
 //!
-//! `is_type` gives the trait `Is<X>` which acts like an equality constraint.
+//! `is_type` gives the trait `Is<Type=X>` which acts like an equality constraint.
 //! 
 //! There's also functions to move between these two equivalent types,
 //! as Rust will still not realise these types are
 //! 
-//! The constraint `X : Is<Y>` requires that `X` == `Y`.
+//! The constraint `X : Is<Type=Y>` requires that `X` == `Y`.
 //! 
 //! The idea was stolen from 
 //! [this comment on equality constraints in where clauses] which
